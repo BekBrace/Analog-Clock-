@@ -1,0 +1,114 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: black;
+}
+
+.clock {
+  width: 350px;
+  height: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 8px solid red;
+  border-radius: 50%;
+}
+.clock::before {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background-color: red;
+  border-radius: 50%;
+  z-index: 100;
+}
+
+.hour,
+.minute,
+.second {
+  position: absolute;
+}
+
+.hour,
+.hr {
+  width: 200px;
+  height: 200px;
+}
+
+.minute,
+.min {
+  width: 230px;
+  height: 230px;
+}
+
+.second,
+.sec {
+  width: 250px;
+  height: 250px;
+}
+
+.hr,
+.min,
+.sec {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+}
+
+.hr::before {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 100px;
+  background-color: blanchedalmond;
+}
+.min::before {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 110px;
+  background-color: blanchedalmond;
+}
+.sec::before {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 130px;
+  background-color: red;
+}
+
+#clock {
+  text-align: center;
+  color: blanchedalmond;
+  margin-bottom: 30px;
+}
+
+.glow {
+  font-size: 35px;
+  text-align: center;
+  color: white;
+  /* animation for Google Chrome, IE9 ..etc */
+  -webkit-animation: glow 1s ease-in-out inifite alternate;
+  /* animation for Mozila Firefox */
+  -moz-animation: glow 1s ease-in-out inifite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #eeeeee, 0 0 20px #000000, 0 0 30px #000000,
+      0 0 40px white, 0 0 50px white, 0 0 60px white, 0 0 70px white;
+  }
+  to {
+    text-shadow: 0 0 20px red, 0 0 30px red, 0 0 40px red, 0 0 50px red,
+      0 0 60px red, 0 0 70px red, 0 0 80px red;
+  }
+}
